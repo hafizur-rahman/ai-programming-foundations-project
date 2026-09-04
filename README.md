@@ -2,20 +2,20 @@
 
 **Author:** Md Hafizur Rahman Bhuia
 
-A complete, reproducible data-science workflow will be built on the NYC Airbnb Listings dataset. It ingests the raw data, cleans and transforms it with documented, reusable functions, runs exploratory analysis, and produces labeled visualizations—all version-controlled with Git so the entire pipeline can be rerun from scratch.
+A complete, reproducible data-science workflow built on the NYC Airbnb Listings dataset. It ingests the raw data, cleans and transforms it with documented, reusable functions, runs exploratory analysis, and produces labeled visualizations—all version-controlled with Git so the entire pipeline can be rerun from scratch.
 
 > Note: This README contains only run-time instructions and brief reflection. For detailed methodology, interpretations, academic citations, and the full workflow description, see **`module_summary.md`**.
 
 ---
 
-## What I Will Build
+## What I Built
 
 A modular, error-free Jupyter notebook (`data_workflow.ipynb`) that implements a professional data workflow:
 
 - **Ingestion** — loads the dataset with Pandas and confirms it loaded correctly.
-- **Cleaning** — at least two reusable, documented functions.
-- **Exploratory analysis** — TBD.
-- **Visualizations** — TBD.
+- **Cleaning** — two reusable, documented functions (`clean_structure`, `clean_missing`).
+- **Exploratory analysis** — one EDA function (`explore_data`) printing null counts, grouped price statistics, property mix, and numeric summaries.
+- **Visualizations** — three labeled plots (bar, violin, FacetGrid boxplots).
 - **Summary** — interpretation of results, limitations, and assumptions.
 
 ---
@@ -94,13 +94,21 @@ Then open `data_workflow.ipynb` and **Run → Run All Cells** to execute the wor
 
 ## Bias Awareness
 
-TBD
+Poor data handling can distort real-world conclusions:
+
+- **Dropping rows with missing neighbourhood labels** may remove a non-random subset (e.g., less-popular listings), biasing borough statistics.
+- **Median imputation** assumes missing values are missing at random and erodes the uncertainty of imputed prices.
+- **Removing shared-room listings** changes the population of interest, so results describe whole-property rentals, not the entire market.
+
+Mitigation: every cleaning step is documented as an explicit assumption, dataset sizes are reported before and after cleaning, and boroughs with few listings are flagged as statistically unstable.
 
 ---
 
 ## Future Integration
 
-TBD
+- **Machine learning:** The cleaned frame can feed a supervised regression model (e.g., predicting `price`). Categorical variables (`neighbourhood_group`, `room_type`) would need encoding, and `reviews_per_month` / availability features would expand the predictor set.
+- **Neural network preparation:** Numeric features would be standardized, the target log-transformed to match its skewed distribution, and the data split into train/validation/test sets.
+- **Agentic automation:** The modular function design (`clean_structure`, `clean_missing`, `explore_data`) maps naturally to an agent pipeline—an agent could invoke each stage, validate outputs, and iterate on cleaning heuristics autonomously.
 
 See `module_summary.md` for the full rationale and scholarly citations.
 
