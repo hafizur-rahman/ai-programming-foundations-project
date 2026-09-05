@@ -4,7 +4,7 @@
 
 A complete, reproducible data-science workflow built on the NYC Airbnb Listings dataset. It ingests the raw data, cleans and transforms it with documented, reusable functions, runs exploratory analysis, and produces labeled visualizations—all version-controlled with Git so the entire pipeline can be rerun from scratch.
 
-> Note: This README contains only run-time instructions and brief reflection. For detailed methodology, interpretations, academic citations, and the full workflow description, see **`module_summary.md`**.
+> Note: This README contains only run-time instructions and brief reflection. For detailed methodology, interpretations, academic citations, and the full workflow description, see **`module_summary.pdf`**.
 
 ---
 
@@ -73,12 +73,12 @@ Then open `data_workflow.ipynb` and **Run → Run All Cells** to execute the wor
 ## Project Structure
 
 ```
-.
+<ai-programming-foundations-project>
 ├── data/
-│   └── AB_NYC_2019.csv      # dataset (place here)
+│   └── AB_NYC_2019.csv       # dataset (place here)
 ├── charts/                   # saved figures (auto-generated)
 ├── data_workflow.ipynb       # main notebook (the workflow)
-├── module_summary.md         # detailed report + citations
+├── module_summary.pdf        # detailed report + citations
 ├── requirements.txt          # pinned dependencies
 └── README.md
 ```
@@ -106,10 +106,10 @@ Mitigation: every cleaning step is documented as an explicit assumption, dataset
 
 ## Future Integration
 
-- **Machine learning:** The cleaned frame can feed a supervised regression model (e.g., predicting `price`). Categorical variables (`neighbourhood_group`, `room_type`) would need encoding, and `reviews_per_month` / availability features would expand the predictor set.
-- **Neural network preparation:** Numeric features would be standardized, the target log-transformed to match its skewed distribution, and the data split into train/validation/test sets.
-- **Agentic automation:** The modular function design (`clean_structure`, `clean_missing`, `explore_data`) maps naturally to an agent pipeline—an agent could invoke each stage, validate outputs, and iterate on cleaning heuristics autonomously.
+- **Machine learning:** The cleaned frame can feed a supervised regression model (e.g., predicting `price`). Categorical variables (`neighbourhood_group`, `room_type`) would need encoding, and `minimum_nights`, `availability_365` features would expand the predictor set.
+- **Neural network preparation:** Numeric features would be standardized, the target feature `price` log-transformed to match its skewed distribution, and the data split into train/validation/test sets.
+- **Agentic automation:** The modular function design (`clean_outliers`, `spearman_price_report`, `eta_price_report`) maps naturally to an agent pipeline—an agent could invoke each stage, validate outputs, and iterate on cleaning heuristics autonomously.
 
-See `module_summary.md` for the full rationale and scholarly citations.
+See `module_summary.pdf` for the full rationale and scholarly citations.
 
 ---
