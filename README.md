@@ -106,9 +106,9 @@ Mitigation: every cleaning step is documented as an explicit assumption, dataset
 
 ## Future Integration
 
-- **Machine learning:** The cleaned frame can feed a supervised regression model (e.g., predicting `price`). Categorical variables (`neighbourhood_group`, `room_type`) would need encoding, and `reviews_per_month` / availability features would expand the predictor set.
+- **Machine learning:** The cleaned frame can feed a supervised regression model (e.g., predicting `price`). Categorical variables (`neighbourhood_group`, `room_type`) would need encoding, and `reviews_per_month` / `availability` features would expand the predictor set.
 - **Neural network preparation:** Numeric features would be standardized, the target log-transformed to match its skewed distribution, and the data split into train/validation/test sets.
-- **Agentic automation:** The modular function design (`clean_structure`, `clean_missing`, `explore_data`) maps naturally to an agent pipeline—an agent could invoke each stage, validate outputs, and iterate on cleaning heuristics autonomously.
+- **Agentic automation:** The modular function design (`clean_outliers`, `spearman_price_report`, `eta_price_report`) maps naturally to an agent pipeline—an agent could invoke each stage, validate outputs, and iterate on cleaning heuristics autonomously.
 
 See `module_summary.md` for the full rationale and scholarly citations.
 
