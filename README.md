@@ -26,7 +26,7 @@ cd ai-programming-foundations-project
 ### **2. Create and Activate a Virtual Environment**
 ```bash
 python -m venv .venv
-source venv/bin/activate   # macOS/Linux
+source .venv/bin/activate   # macOS/Linux
 .venv\Scripts\activate      # Windows
 ```
 
