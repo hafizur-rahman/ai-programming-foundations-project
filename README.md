@@ -31,7 +31,9 @@ source .venv/bin/activate   # macOS/Linux
 ```
 
 ### **3. Install Dependencies**
-All dependencies are pinned in `requirements.txt`:
+All dependencies are pinned in `requirements.txt` using `pip freeze > requirements.txt`.
+
+So dependencies can be installed using:
 ```bash
 pip install -r requirements.txt
 ```
