@@ -49,6 +49,12 @@ The notebook will:
 - Generate visualizations
 - Produce summary outputs
 
+## Dataset
+
+- **Name:** NYC Airbnb Open Data
+- **Link:** https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data
+- **Local file:** `./data/AB_NYC_2019.csv` (committed to git for convenience)
+
 ---
 
 ## **Reflection Questions**
@@ -114,6 +120,8 @@ Reproducibility is essential for debugging, collaboration, and long‑term maint
 ├── module_summary.pdf
 ├── requirements.txt
 ├── README.md
+├── data/
+|   └── AB_NYC_2019.csv 
 └── charts/
     ├── fig_median_price_by_neighbourhood.png
     ├── fig_price_by_property_type_across_neighbourhoods.png
